@@ -1,0 +1,50 @@
+.header
+  .header__message
+    グループを作成しました
+.contents 
+  .contents__left
+    .contents__left__user-name
+      %ul.list
+        %li.user
+          ユーザー名
+        %li.edit
+          =link_to new_group_path , class: "pencil-btn" do
+            %i.fa.fa-pencil-square-o
+          =link_to "#" , class: "cog-btn" do
+            %i.fa.fa-cog
+    .groups
+      .group
+        - current_user.groups.each do |group|
+          = link_to group_messages_path(group) do
+            .contents__left__group-name
+              = group.name
+              .contents__left__group-name__message
+                こんにちは
+  .contents__main
+    .contents__main__group
+      .contents__main__group__group-name
+        グループ名
+      .contents__main__group__member
+        メンバー名
+      .contents__main__group__edit
+        =link_to "#" , class: "edit-btn" do
+          .edit
+          Edit 
+    .contents__main__mid
+      .contents__main__mid__member
+        メンバー
+      .contents__main__mid__message
+        メッセージ
+    .contents__main__form 
+      //%input{:name => "text", :size => "113px", :class => "txt"}
+      //%i.fa.fa-picture-o
+      //%input{:type => "submit", :value => "Send", :class => "send"}
+      .form
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
+     

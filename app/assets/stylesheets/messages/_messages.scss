@@ -1,0 +1,127 @@
+.header{
+  width:100vw;
+  height: 20px;
+  background: #38AEF0;
+  text-align: center;
+  &__message{
+    color: #ffffff;
+    font-size: 10px;
+  }
+}
+
+.contents{
+  display:flex;
+  width: 100vw;
+  height: 100vh;
+    &__left{
+      width: 300px;
+      height: 100％;
+      background: #2f3e51;
+      height: 100vh;
+      &__user-name{
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: bold;
+        margin-top: 35px;
+        .list{
+          //color:red;
+          display: flex;
+          justify-content: space-between;
+          .pencil-btn{
+            color:#ffffff;
+          }
+          .cog-btn{
+            color:#ffffff;
+          }
+        }
+      }
+      &__group-name{
+        color: #ffffff;
+        font-size: 15px;
+        font-weight: bold;
+        margin-top: 30px;
+        background: #2f3e51;
+        height: 95px;
+        &__message{
+          font-size: 11px;
+        }
+      }
+    }
+    &__main{
+      position:  relative;
+      width: calc(100vw - 300px);
+      height: 100%;
+      &__group{
+        width: calc(100vw - 300px);
+        height: 90px;
+        border-bottom: thin solid #eeeeee;
+        &__group-name{
+          position:  absolute;
+          font-size: 20px;
+          color: #333333;
+          margin: 35px 0px 0px 40px;
+        }
+        &__member{
+          position:  absolute;
+          margin: 70px 0px 0px 40px;
+          font-size: 12px;
+          color: #999999;
+        }
+        &__edit{
+          position:  absolute;
+          line-height: 40px;  
+          border: solid;
+          border-color: #00ffff;
+          border-width: thin;
+          top: 28px;
+          right: 40px;
+          text-align: center;
+          padding: 0 20px;
+            .edit-btn{
+              color: #00ffff;
+              text-decoration: none;
+              vertical-align: middle;
+            }
+        }
+      }
+      &__mid{
+        width: calc(100vw - 300px);
+        height: 100vh;
+        &__member{
+          position: absolute;
+          margin: 46px 0px 0px 40px;
+          font-size: 20px;
+        }
+        &__message{
+          position: absolute;
+          margin: 80px 0px 0px 40px;
+          font-size: 12px;
+        }
+      }
+      &__form{
+        position:  absolute;
+        width: calc(100vw - 300px);
+        height: 50px;
+        bottom: 0px;
+        .fa{
+          position:  absolute;
+          font-size: 30px;
+          top: 12px;
+          right: 120px;
+        }
+        .txt{
+          height: 50px;
+        }
+        .send{
+          position:  absolute;
+          top: 0px;
+          right:20px;
+          padding: 10px 20px;
+          font-size: 1.2em;
+          background-color: #38aef0;
+          color: #ffffff;
+          border-style: none;
+        }
+      }
+    }
+}
