@@ -1,0 +1,19 @@
+.contents 
+  .contents__left
+    .contents__left__user-name
+      %ul.list
+        %li.user
+          ユーザー名
+        %li.edit
+          =link_to new_group_path , class: "pencil-btn" do
+            %i.fa.fa-pencil-square-o
+          =link_to "#" , class: "cog-btn" do
+            %i.fa.fa-cog
+    .groups
+      .group
+        - current_user.groups.each do |group|
+          = link_to group_messages_path(group) do
+            .contents__left__group-name
+              = group.name
+              .contents__left__group-name__message
+                = group.show_last_message
