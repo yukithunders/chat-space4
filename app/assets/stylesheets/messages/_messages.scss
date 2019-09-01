@@ -103,25 +103,27 @@
         width: calc(100vw - 300px);
         height: 50px;
         bottom: 0px;
-        .fa{
-          position:  absolute;
-          font-size: 30px;
-          top: 12px;
-          right: 120px;
-        }
-        .txt{
-          height: 50px;
-        }
-        .send{
-          position:  absolute;
-          top: 0px;
-          right:20px;
-          padding: 10px 20px;
-          font-size: 1.2em;
-          background-color: #38aef0;
-          color: #ffffff;
-          border-style: none;
-        }
+        &__mask
+          .icon{
+            position:  absolute;
+            font-size: 30px;
+            top: 12px;
+            right: 120px;
+          }
+          .form__message{
+            height: 50px;
+            size: 200px;
+          }
+          .form__submit{
+            position:  absolute;
+            top: 0px;
+            right:20px;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            background-color: #38aef0;
+            color: #ffffff;
+            border-style: none;
+          }
       }
     }
 }
