@@ -1,9 +1,22 @@
 $(function(){
   function buildHTML(message){
-    var html = `<p class="lower-message__content">
-    ${message.content}
+    var html = `<div class="message">
+    <div class="upper-message">
+    <div class="upper-message__user-name">
     ${message.name}
-    </p>`
+    </div>
+    <div class="upper-message__date">
+    ${message.date}
+    </div>
+    </div>
+    <div class="lower-message">
+    <p class="lower-message__content">
+    ${message.content}
+    </p>
+    <p class="lower-message__image">
+    ${message.image}
+    </p>
+    </div></div>`
     return html;
   }
   $('#new_message').on('submit',function(e){
@@ -27,8 +40,8 @@ $(function(){
       console.log(data);
       console.log("きてる")
       var html = buildHTML(data);
-      $('.lower-message').append(html);
-      $('.textbox').val('');
+      $('.contents__main__mid').append(html);
+      //$('.message').val('');
     })
     .fail(function(data){
       console.log("きていない")
