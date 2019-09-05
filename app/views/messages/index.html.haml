@@ -25,7 +25,8 @@
       .contents__main__group__group-name
         = @group.name
       .contents__main__group__member
-        メンバー名
+        - @group.users.each do |user|
+          = user.name
       .contents__main__group__edit
         = link_to edit_group_path(@group), class: "edit-btn" do
           .edit
@@ -38,7 +39,7 @@
       -# %input{:type => "submit", :value => "Send", :class => "send"}
       .form
         = form_for [@group, @message],html: {class: 'form'} do |f|
-          = f.text_field :content,  class: 'form__message', placeholder: 'type a message'
+          = f.text_field :content,  class: 'form__message', :size=>"110", placeholder: 'type a message'
           .form__mask
             = f.label :image, class: 'form__mask__image' do
               = fa_icon 'picture-o', class: 'icon'

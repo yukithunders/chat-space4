@@ -23,8 +23,8 @@ $(function(){
     e.preventDefault();
     var formData = new FormData(this);
     //console.log(formData.get(content));
-    //console.log(formData.get(image));
-    console.log(formData);
+    console.log(formData.get(image));
+    //console.log(formData);
 
     var act = $('#new_message').attr('action');
 
@@ -41,10 +41,12 @@ $(function(){
       console.log("きてる")
       var html = buildHTML(data);
       $('.contents__main__mid').append(html);
-      //$('.message').val('');
+      $(".form__submit").removeAttr("disabled");
+      $('.form__message').val('');
     })
     .fail(function(data){
-      console.log("きていない")
+      console.log("きていない");
+      $(".form__submit").removeAttr("disabled");
       console.log(data);
       alert('eroor');
     })
