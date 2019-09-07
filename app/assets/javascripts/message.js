@@ -45,7 +45,6 @@ $(function(){
     })
     .fail(function(data){
       $(".form__submit").removeAttr("disabled");
-      console.log(data);
       alert('eroor');
     })
   });
