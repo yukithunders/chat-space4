@@ -86,7 +86,8 @@
       }
       &__mid{
         width: calc(100vw - 300px);
-        height: 100vh;
+        height: 560px;
+        overflow:scroll;
         &__member{
           position: absolute;
           margin: 46px 0px 0px 40px;

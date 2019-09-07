@@ -1,29 +1,32 @@
 $(function(){
   function buildHTML(message){
-    var html = `<div class="message">
-    <div class="upper-message">
-    <div class="upper-message__user-name">
-    ${message.name}
-    </div>
-    <div class="upper-message__date">
-    ${message.date}
-    </div>
-    </div>
-    <div class="lower-message">
-    <p class="lower-message__content">
-    ${message.content}
-    </p>
-    <p class="lower-message__image">
-    ${message.image}
-    </p>
-    </div></div>`
+
+    var MessageImage = (message.image) ? `<img class=lower-message__image src= ${message.image}>`: "";
+      
+      var html = `<div class="message">
+      <div class="upper-message">
+      <div class="upper-message__user-name">
+      ${message.name}
+      </div>
+      <div class="upper-message__date">
+      ${message.date}
+      </div>
+      </div>
+      <div class="lower-message">
+      <p class="lower-message__content">
+      ${message.content}
+      </p>
+      ${MessageImage}
+      </div>
+      </div>`
+
     return html;
   }
   $('#new_message').on('submit',function(e){
     e.preventDefault();
     var formData = new FormData(this);
     //console.log(formData.get(content));
-    console.log(formData.get(image));
+    //console.log(formData.get(image));
     //console.log(formData);
 
     var act = $('#new_message').attr('action');
