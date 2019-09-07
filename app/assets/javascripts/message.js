@@ -25,9 +25,6 @@ $(function(){
   $('#new_message').on('submit',function(e){
     e.preventDefault();
     var formData = new FormData(this);
-    //console.log(formData.get(content));
-    //console.log(formData.get(image));
-    //console.log(formData);
 
     var act = $('#new_message').attr('action');
 
@@ -41,14 +38,12 @@ $(function(){
     })
     .done(function(data){
       console.log(data);
-      console.log("きてる")
       var html = buildHTML(data);
       $('.contents__main__mid').append(html);
       $(".form__submit").removeAttr("disabled");
-      $('.form__message').val('');
+      $('#new_message')[0].reset();
     })
     .fail(function(data){
-      console.log("きていない");
       $(".form__submit").removeAttr("disabled");
       console.log(data);
       alert('eroor');
