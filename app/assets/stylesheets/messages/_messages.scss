@@ -86,7 +86,8 @@
       }
       &__mid{
         width: calc(100vw - 300px);
-        height: 100vh;
+        height: 560px;
+        overflow:scroll;
         &__member{
           position: absolute;
           margin: 46px 0px 0px 40px;
@@ -103,25 +104,34 @@
         width: calc(100vw - 300px);
         height: 50px;
         bottom: 0px;
-        .fa{
-          position:  absolute;
-          font-size: 30px;
-          top: 12px;
-          right: 120px;
-        }
-        .txt{
-          height: 50px;
-        }
-        .send{
-          position:  absolute;
-          top: 0px;
-          right:20px;
-          padding: 10px 20px;
-          font-size: 1.2em;
-          background-color: #38aef0;
-          color: #ffffff;
-          border-style: none;
-        }
+        &__form__mask
+          .form__mask__image{
+            font-size: 4px;
+          }
+          .fa{
+            position:  absolute;
+            font-size: 40px;
+            top: 12px;
+            right: 150px;
+          }
+          .form__message{
+            height: 50px;
+            size: 200px;
+          }
+          .hidden{
+            font-size: 20px;
+            display:none;
+          }
+          .form__submit{
+            position:  absolute;
+            top: 0px;
+            right:20px;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            background-color: #38aef0;
+            color: #ffffff;
+            border-style: none;
+          }
       }
     }
 }
