@@ -37,29 +37,21 @@ $(function(){
     name_list.append(html);
   }
   $(document).on('click','.user-search-add',function(){
-    console.log("アイウエオ");
     var user_id = $(this).attr('data-user-id');
-    console.log(user_id);
     var user_name = $(this).attr('data-user-name');
-    console.log(user_name);
     $(this).parent().remove();
     append_add_Member(user_id,user_name);
   })
 
   $(document).on('click','.user-search-remove',function(){
-    console.log("かきくけこ");
     var user_id = $(this).attr('data-user-id');
-    console.log(user_id);
     var user_name = $(this).attr('data-user-name');
-    console.log(user_name);
     $(this).parent().remove();
-    console.log($(this).parent());
     append_del_Member(user_id,user_name);
   })
 
   $(".user-search-field").on("keyup", function() {
     var input = $(".user-search-field").val();
-    console.log(input);
     $.ajax({
       type: 'GET',
       url:  '/users',
@@ -68,14 +60,11 @@ $(function(){
     })
 
     .done(function(users){
-      console.log(users);
       $('.user-search-add-list').empty();
       if(users.length !== 0){
         users.forEach(function(user){
-          appendUser(user);
+            appendUser(user);
         });
-      }else{
-        //エラー
       }
     })
     .fail(function() {
@@ -86,8 +75,6 @@ $(function(){
   $('#new_group').on('submit',function(e){
     e.preventDefault();
     var formData = new FormData(this);
-    console.log(formData);
-    console.log("サシスセソ");
     $.ajax({
       type: 'POST',
       url: '/groups',
