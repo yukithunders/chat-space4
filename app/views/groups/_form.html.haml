@@ -28,9 +28,10 @@
       %input{ name: "group[user_ids][]", type: "hidden", value: "#{current_user.id}" } 
       = current_user.name
       .user-search-result
-        -# -groups.each do |group|
+        -#-groups.each do |group|
           %p.chat-group-user__name
             =gtoup.user.name
             .user-search-add.chat-group-user__btn.chat-group-user__btn--add{"data-user-id" => "${user_id}", "data-user-name" => "${user_name}"} 追加
+            / TODO 今後、%inputの形式からf.の形式に適用する
             %input{ name: "group[user_ids][]", type: "hidden", value: "#{group.user.id}" } 
       = f.submit class: 'chat-group-form__action-btn'
