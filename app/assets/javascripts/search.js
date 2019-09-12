@@ -37,15 +37,15 @@ $(function(){
     name_list.append(html);
   }
   $(document).on('click','.user-search-add',function(){
-    var user_id = $(this).attr('data-user-id');
-    var user_name = $(this).attr('data-user-name');
+    var user_id = $(this).data('user-id');
+    var user_name = $(this).data('user-name');
     $(this).parent().remove();
     append_add_Member(user_id,user_name);
   })
 
   $(document).on('click','.user-search-remove',function(){
-    var user_id = $(this).attr('data-user-id');
-    var user_name = $(this).attr('data-user-name');
+    var user_id = $(this).data('user-id');
+    var user_name = $(this).data('user-name');
     $(this).parent().remove();
     append_del_Member(user_id,user_name);
   })
