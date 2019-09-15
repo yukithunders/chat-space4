@@ -17,6 +17,7 @@
         - current_user.groups.each do |group|
           = link_to group_messages_path(group) do
             .contents__left__group-name
+              %input{name:"id",class:"gid",type: "hidden", value: group.id} 
               = group.name
               .contents__left__group-name__message
                 = group.show_last_message
@@ -34,9 +35,6 @@
     .contents__main__mid
       = render @messages
     .contents__main__form 
-      -# %input{:name => "text", :size => "113px", :class => "txt"}
-      -# %i.fa.fa-picture-o
-      -# %input{:type => "submit", :value => "Send", :class => "send"}
       .form
         = form_for [@group, @message],html: {class: 'form'} do |f|
           = f.text_field :content,  class: 'form__message', :size=>"110", placeholder: 'type a message'
