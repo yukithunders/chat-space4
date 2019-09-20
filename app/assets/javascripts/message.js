@@ -46,7 +46,9 @@ $(function(){
   });
 
   var reloadMessages = function(){
+    
     if(document.URL.indexOf("messages") !== -1){
+      console.log("reload");
     last_message_id = $('.message:last').data('message-id');
     var act = $('#new_message').attr('action');
     var g_id = $('.gid').attr('value');
@@ -68,5 +70,5 @@ $(function(){
     });
   };
  };
-    setInterval(reloadMessages, 5000);
+    setInterval(reloadMessages, 1000);
 });
