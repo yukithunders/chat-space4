@@ -22,6 +22,8 @@
       %label.chat-group-form__label{for: "chat_group_チャットメンバー"} チャットメンバー
     .chat-group-form__field--right
       %input{ name: "group[user_ids][]", type: "hidden", value: "#{current_user.id}" } 
-      = current_user.name
+      
+      - @group.users.each do |user|
+        = user.name
       .user-search-result
       = f.submit class: 'chat-group-form__action-btn'
