@@ -104,11 +104,13 @@
         .message{
           //margin: 80px 0px 0px 40px;
           font-size: 14px;
+          color: #434A54;
           .upper-message{
             .list{
               display: flex;
               .user{
                 font-size:16px;
+                font-style:bold;
               }
               .date{
                 margin-left: 2px;
@@ -148,7 +150,8 @@
           }
           .hidden{
             position:  absolute;
-            font-size: 20px;
+            font-size: 16px;
+            color: #434A54;
             display:none;
           }
           .form__submit{
