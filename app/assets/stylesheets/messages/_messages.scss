@@ -94,7 +94,7 @@
       &__mid{
         width: calc(100vw - 300px);
         background-color: #fafafa;
-        height: 560px;
+        height: 600px;
         overflow:scroll;
         &__member{
           position: absolute;
@@ -146,9 +146,11 @@
             margin-right: 0px;
           }
           .form__message{
+            position:  relative;
             height: 50px;
-            size: 200px;
+            width: 88%;
             margin-left: 10px;
+            margin-right: 100px;
           }
           .hidden{
             position:  absolute;
