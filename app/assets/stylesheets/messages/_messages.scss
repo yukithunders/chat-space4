@@ -15,23 +15,30 @@
   height: 100vh;
     &__left{
       width: 300px;
-      height: 100％;
       background: #2f3e51;
       height: 100vh;
+      overflow:scroll;
       &__user-name{
         color: #ffffff;
-        font-size: 16px;
+        background: #253141;
+        height: 92px;
+        line-height: 120px;
         font-weight: bold;
-        margin-top: 35px;
+        margin-top: 0px;
         .list{
           //color:red;
           display: flex;
           justify-content: space-between;
+          .user{
+            font-size: 16px;
+          }
           .pencil-btn{
             color:#ffffff;
+            font-size: 16px;
           }
           .cog-btn{
             color:#ffffff;
+            font-size: 16px;
           }
         }
       }
@@ -88,22 +95,40 @@
         width: calc(100vw - 300px);
         height: 560px;
         overflow:scroll;
+        margin-top: 30px;
         &__member{
           position: absolute;
           margin: 46px 0px 0px 40px;
           font-size: 20px;
         }
-        &__message{
-          position: absolute;
-          margin: 80px 0px 0px 40px;
-          font-size: 12px;
+        .message{
+          //margin: 80px 0px 0px 40px;
+          font-size: 14px;
+          .upper-message{
+            .list{
+              display: flex;
+              .user{
+                font-size:16px;
+              }
+              .date{
+                margin-left: 2px;
+                font-size:14px;
+                color: #999999;
+              }
+            }
+          }
         }
       }
       &__form{
         position:  absolute;
+        box-sizing: content-box;
         width: calc(100vw - 300px);
-        height: 50px;
+        height: 100px;
         bottom: 0px;
+        background: #C0C0C0;
+        &__forms{
+          margin-top: 20px;
+        }
         &__form__mask
           .form__mask__image{
             font-size: 4px;
@@ -113,12 +138,16 @@
             font-size: 40px;
             top: 12px;
             right: 150px;
+            margin-top: 18px;
+            margin-right: 0px;
           }
           .form__message{
             height: 50px;
             size: 200px;
+            margin-left: 10px;
           }
           .hidden{
+            position:  absolute;
             font-size: 20px;
             display:none;
           }
@@ -131,6 +160,7 @@
             background-color: #38aef0;
             color: #ffffff;
             border-style: none;
+            margin-top: 20px;
           }
       }
     }

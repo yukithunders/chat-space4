@@ -5,12 +5,14 @@ $(function(){
       
       var html = `<div class="message" data-message-id=${message.id}>
       <div class="upper-message">
-      <div class="upper-message__user-name">
-      ${message.user_name}
-      </div>
-      <div class="upper-message__date">
-      ${message.created_at}
-      </div>
+        <ul class="list">
+          <li class="user">
+          ${message.user_name}
+          </li>
+          <li class="date">
+          ${message.created_at}
+          </li>
+        </ul>
       </div>
       <div class="lower-message">
       <p class="lower-message__content">
@@ -50,19 +52,22 @@ $(function(){
   var reloadMessages = function(){
     if(document.URL.indexOf("messages") !== -1){
     last_message_id = $('.message:last').data('message-id');
-    var act = $('#new_message').attr('action');
-    var g_id = $('.gid').attr('value');
-    var g_url = "/groups/" + g_id + "/api/messages"
+    console.log(last_message_id);
+    // var act = $('#new_message').attr('action');
+    // var g_id = $('.gid').attr('value');
+    // var g_url = "/groups/" + g_id + "/api/messages"
     $.ajax({
-      url: g_url,
-      type: 'get',
-      dataType: 'json',
-      data: {id: last_message_id}
+      url: "api/messages",
+      type: 'GET',
+      data: {id: last_message_id},
+      dataType: 'json'
     })
     .done(function(messages){ 
+      console.log(messages);
       messages.forEach(function(message){
         var html = buildMessageHTML(message);
         $('.contents__main__mid').append(html);
+        console.log("アペンド");
       });
       var $scrollAuto = $('.contents__main__mid');
         $scrollAuto.animate({scrollTop: $scrollAuto[0].scrollHeight}, 'slow');
@@ -73,5 +78,5 @@ $(function(){
     });
   };
  };
-    //setInterval(reloadMessages, 1000);
+    setInterval(reloadMessages, 5000);
 });
