@@ -38,6 +38,8 @@ $(function(){
       $('.contents__main__mid').append(html);
       $(".form__submit").removeAttr("disabled");
       $('#new_message')[0].reset();
+      var $scrollAuto = $('.contents__main__mid');
+      $scrollAuto.animate({scrollTop: $scrollAuto[0].scrollHeight}, 'slow');
     })
     .fail(function(data){
       $(".form__submit").removeAttr("disabled");
@@ -46,7 +48,6 @@ $(function(){
   });
 
   var reloadMessages = function(){
-    
     if(document.URL.indexOf("messages") !== -1){
     last_message_id = $('.message:last').data('message-id');
     var act = $('#new_message').attr('action');
@@ -63,11 +64,14 @@ $(function(){
         var html = buildMessageHTML(message);
         $('.contents__main__mid').append(html);
       });
+      var $scrollAuto = $('.contents__main__mid');
+        $scrollAuto.animate({scrollTop: $scrollAuto[0].scrollHeight}, 'slow');
+        console.log("スクロール");
     })
     .fail(function(){
       alert("error");
     });
   };
  };
-    setInterval(reloadMessages, 1000);
+    //setInterval(reloadMessages, 1000);
 });

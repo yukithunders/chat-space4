@@ -71,17 +71,4 @@ $(function(){
       alert('検索に失敗しました');
     });
   });
-
-  $('#new_group').on('submit',function(e){
-    e.preventDefault();
-    var formData = new FormData(this);
-    $.ajax({
-      type: 'POST',
-      url: '/groups',
-      data: formData, 
-      dataType: "json",
-      processData: false,
-      contentType: false
-    })
-  });
 });
