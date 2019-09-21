@@ -67,11 +67,10 @@ $(function(){
       messages.forEach(function(message){
         var html = buildMessageHTML(message);
         $('.contents__main__mid').append(html);
-        console.log("アペンド");
       });
       var $scrollAuto = $('.contents__main__mid');
         $scrollAuto.animate({scrollTop: $scrollAuto[0].scrollHeight}, 'slow');
-        console.log("スクロール");
+
     })
     .fail(function(){
       alert("error");
